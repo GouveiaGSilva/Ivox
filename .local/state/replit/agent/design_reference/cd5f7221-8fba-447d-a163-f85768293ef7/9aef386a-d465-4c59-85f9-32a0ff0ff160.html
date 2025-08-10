@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivox Scale - Marketing Digital de Alto Impacto</title>
+    <meta name="description" content="Transforme seu negócio com marketing digital estratégico. Gestão de tráfego pago, criação de sites e consultoria especializada.">
+    <meta name="keywords" content="marketing digital, tráfego pago, criação de sites, consultoria, Ivox Scale">
+    <meta property="og:title" content="Ivox Scale - Marketing Digital de Alto Impacto">
+    <meta property="og:description" content="Sua presença digital elevada a outro nível com estratégias personalizadas">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=630">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#6366F1',
+                        primaryHover: '#5B21B6',
+                        secondary: '#8B5CF6',
+                        accent: '#10B981',
+                        danger: '#EF4444',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-in-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'float': 'float 3s ease-in-out infinite',
+                    }
+                }
+            },
+            darkMode: 'class',
+        }
+    </script>
+    
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(30px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .dark .glass-effect {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+
+<body class="font-poppins bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+    <!-- @COMPONENT: Header [Fixed navigation with logo, menu, theme/language toggles] -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-effect">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
+                        <i class="fas fa-rocket text-white text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-primary dark:text-white">Ivox Scale</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" data-pt="Início" data-en="Home">Início</a>
+                    <a href="#about" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" data-pt="Sobre" data-en="About">Sobre</a>
+                    <a href="#services" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" data-pt="Serviços" data-en="Services">Serviços</a>
+                    <a href="#testimonials" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" data-pt="Depoimentos" data-en="Testimonials">Depoimentos</a>
+                    <a href="#contact" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" data-pt="Contato" data-en="Contact">Contato</a>
+                </div>
+                
+                <!-- Theme and Language Controls -->
+                <div class="flex items-center space-x-4">
+                    <!-- Language Toggle -->
+                    <button id="language-toggle" class="flex items-center space-x-1 px-3 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                        <i class="fas fa-globe text-sm"></i>
+                        <span id="current-lang" class="text-sm font-medium">PT</span>
+                    </button>
+                    
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                        <i class="fas fa-sun dark:hidden"></i>
+                        <i class="fas fa-moon hidden dark:inline"></i>
+                    </button>
+                    
+                    <!-- CTA Button -->
+                    <button class="hidden md:inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300" data-pt="Solicitar Orçamento" data-en="Request Quote">
+                        Solicitar Orçamento
+                    </button>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden p-2">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary transition-colors" data-pt="Início" data-en="Home">Início</a>
+                    <a href="#about" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary transition-colors" data-pt="Sobre" data-en="About">Sobre</a>
+                    <a href="#services" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary transition-colors" data-pt="Serviços" data-en="Services">Serviços</a>
+                    <a href="#testimonials" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary transition-colors" data-pt="Depoimentos" data-en="Testimonials">Depoimentos</a>
+                    <a href="#contact" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary transition-colors" data-pt="Contato" data-en="Contact">Contato</a>
+                    <button class="w-full px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300" data-pt="Solicitar Orçamento" data-en="Request Quote">
+                        Solicitar Orçamento
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- @END_COMPONENT: Header -->
+
+    <!-- @COMPONENT: HeroSection [Main banner with parallax background and compelling CTA] -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center parallax" style="background-image: linear-gradient(rgba(99, 102, 241, 0.8), rgba(139, 92, 246, 0.8)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080');">
+        <!-- Modern business meeting with laptops and digital marketing charts -->
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-secondary/80"></div>
+        
+        <div class="relative z-10 text-center max-w-4xl mx-auto px-6">
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 animate-slide-up" data-pt="Sua presença digital elevada a outro nível" data-en="Your digital presence elevated to another level">
+                Sua presença digital elevada a outro nível
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-100 mb-8 animate-slide-up" data-pt="Marketing com propósito, estratégia e tecnologia de ponta" data-en="Marketing with purpose, strategy and cutting-edge technology">
+                Marketing com propósito, estratégia e tecnologia de ponta
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
+                <button class="px-8 py-4 bg-white text-primary font-bold rounded-lg hover:bg-gray-100 transform hover:-translate-y-1 transition-all duration-300 shadow-xl" data-pt="Comece Agora" data-en="Start Now">
+                    Comece Agora
+                </button>
+                <button class="px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-primary transform hover:-translate-y-1 transition-all duration-300" data-pt="Saiba Mais" data-en="Learn More">
+                    Saiba Mais
+                </button>
+            </div>
+            
+            <!-- Floating Statistics -->
+            <div class="grid grid-cols-3 gap-8 mt-16 animate-fade-in">
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-white mb-2">500+</div>
+                    <div class="text-gray-200" data-pt="Projetos Entregues" data-en="Projects Delivered">Projetos Entregues</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-white mb-2">98%</div>
+                    <div class="text-gray-200" data-pt="Satisfação" data-en="Satisfaction">Satisfação</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-white mb-2">5+</div>
+                    <div class="text-gray-200" data-pt="Anos no Mercado" data-en="Years in Market">Anos no Mercado</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-white text-2xl"></i>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: HeroSection -->
+
+    <!-- @COMPONENT: AboutSection [Company information and team showcase] -->
+    <section id="about" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white" data-pt="Quem Somos" data-en="Who We Are">
+                        Quem Somos
+                    </h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto" data-pt="Somos especialistas em transformar negócios através do marketing digital estratégico, com foco em resultados mensuráveis e crescimento sustentável." data-en="We are specialists in transforming businesses through strategic digital marketing, focusing on measurable results and sustainable growth.">
+                        Somos especialistas em transformar negócios através do marketing digital estratégico, com foco em resultados mensuráveis e crescimento sustentável.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <h3 class="text-3xl font-bold text-gray-900 dark:text-white" data-pt="Nossa Missão" data-en="Our Mission">Nossa Missão</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed" data-pt="Capacitar empresas de todos os tamanhos a alcançarem seu máximo potencial digital através de estratégias personalizadas, tecnologia de ponta e um acompanhamento próximo que garante resultados excepcionais." data-en="Empower companies of all sizes to reach their maximum digital potential through personalized strategies, cutting-edge technology and close monitoring that ensures exceptional results.">
+                            Capacitar empresas de todos os tamanhos a alcançarem seu máximo potencial digital através de estratégias personalizadas, tecnologia de ponta e um acompanhamento próximo que garante resultados excepcionais.
+                        </p>
+                        
+                        <!-- Key Points -->
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-target text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white" data-pt="Foco em Resultados" data-en="Results Focused">Foco em Resultados</h4>
+                                    <p class="text-gray-600 dark:text-gray-300 text-sm" data-pt="Métricas claras e ROI comprovado" data-en="Clear metrics and proven ROI">Métricas claras e ROI comprovado</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-users text-secondary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white" data-pt="Atendimento Personalizado" data-en="Personalized Service">Atendimento Personalizado</h4>
+                                    <p class="text-gray-600 dark:text-gray-300 text-sm" data-pt="Estratégias únicas para cada negócio" data-en="Unique strategies for each business">Estratégias únicas para cada negócio</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-shield-alt text-accent text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white" data-pt="Máxima Segurança" data-en="Maximum Security">Máxima Segurança</h4>
+                                    <p class="text-gray-600 dark:text-gray-300 text-sm" data-pt="Proteção total de dados e privacidade" data-en="Complete data and privacy protection">Proteção total de dados e privacidade</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative">
+                        <!-- Professional team working on digital marketing strategy -->
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Team collaboration" class="rounded-2xl shadow-2xl w-full">
+                        
+                        <!-- Floating Stats Card -->
+                        <div class="absolute -bottom-6 -left-6 bg-white dark:bg-gray-800 rounded-xl shadow-xl p-6 animate-float">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-primary mb-1">150%</div>
+                                <div class="text-sm text-gray-600 dark:text-gray-300" data-pt="Crescimento Médio" data-en="Average Growth">Crescimento Médio</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: AboutSection -->
+
+    <!-- @COMPONENT: ServicesSection [Animated service cards with hover effects] -->
+    <section id="services" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white" data-pt="Nossos Serviços" data-en="Our Services">
+                    Nossos Serviços
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto" data-pt="Soluções completas em marketing digital para impulsionar seu negócio" data-en="Complete digital marketing solutions to boost your business">
+                    Soluções completas em marketing digital para impulsionar seu negócio
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service Card 1: Paid Traffic -->
+                <div class="service-card bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-bullseye text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white" data-pt="Gestão de Tráfego Pago" data-en="Paid Traffic Management">Gestão de Tráfego Pago</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6" data-pt="Campanhas otimizadas no Google Ads, Facebook e Instagram para máximo ROI" data-en="Optimized campaigns on Google Ads, Facebook and Instagram for maximum ROI">
+                        Campanhas otimizadas no Google Ads, Facebook e Instagram para máximo ROI
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i><span data-pt="Google Ads" data-en="Google Ads">Google Ads</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i><span data-pt="Facebook & Instagram Ads" data-en="Facebook & Instagram Ads">Facebook & Instagram Ads</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i><span data-pt="Otimização de Conversão" data-en="Conversion Optimization">Otimização de Conversão</span></li>
+                    </ul>
+                </div>
+                
+                <!-- Service Card 2: Websites -->
+                <div class="service-card bg-gradient-to-br from-purple-50 to-pink-100 dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-laptop-code text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white" data-pt="Sites e Landing Pages" data-en="Websites & Landing Pages">Sites e Landing Pages</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6" data-pt="Desenvolvimento de sites responsivos e landing pages de alta conversão" data-en="Development of responsive websites and high-conversion landing pages">
+                        Desenvolvimento de sites responsivos e landing pages de alta conversão
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i><span data-pt="Design Responsivo" data-en="Responsive Design">Design Responsivo</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i><span data-pt="Otimização SEO" data-en="SEO Optimization">Otimização SEO</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i><span data-pt="Alta Performance" data-en="High Performance">Alta Performance</span></li>
+                    </ul>
+                </div>
+                
+                <!-- Service Card 3: Social Media -->
+                <div class="service-card bg-gradient-to-br from-green-50 to-teal-100 dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-600 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-share-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white" data-pt="Social Media & Conteúdo" data-en="Social Media & Content">Social Media & Conteúdo</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6" data-pt="Gestão completa das redes sociais com conteúdo estratégico e envolvente" data-en="Complete social media management with strategic and engaging content">
+                        Gestão completa das redes sociais com conteúdo estratégico e envolvente
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i><span data-pt="Criação de Conteúdo" data-en="Content Creation">Criação de Conteúdo</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i><span data-pt="Gestão de Comunidade" data-en="Community Management">Gestão de Comunidade</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i><span data-pt="Análise de Métricas" data-en="Metrics Analysis">Análise de Métricas</span></li>
+                    </ul>
+                </div>
+                
+                <!-- Service Card 4: Consulting -->
+                <div class="service-card bg-gradient-to-br from-orange-50 to-red-100 dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white" data-pt="Consultoria Estratégica" data-en="Strategic Consulting">Consultoria Estratégica</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6" data-pt="Análise profunda do seu negócio e desenvolvimento de estratégias personalizadas" data-en="Deep business analysis and development of personalized strategies">
+                        Análise profunda do seu negócio e desenvolvimento de estratégias personalizadas
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i><span data-pt="Auditoria Digital" data-en="Digital Audit">Auditoria Digital</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i><span data-pt="Planejamento Estratégico" data-en="Strategic Planning">Planejamento Estratégico</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i><span data-pt="Acompanhamento Mensal" data-en="Monthly Follow-up">Acompanhamento Mensal</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ServicesSection -->
+
+    <!-- @COMPONENT: DifferentialsSection [Key advantages and unique selling points] -->
+    <section class="py-20 bg-gradient-to-br from-primary/5 to-secondary/5 dark:from-gray-800 dark:to-gray-700">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white" data-pt="Nossos Diferenciais" data-en="Our Differentials">
+                    Nossos Diferenciais
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto" data-pt="O que nos torna únicos no mercado de marketing digital" data-en="What makes us unique in the digital marketing market">
+                    O que nos torna únicos no mercado de marketing digital
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Differential 1: Security -->
+                <div class="text-center p-8">
+                    <div class="w-20 h-20 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-shield-alt text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white" data-pt="Segurança & Privacidade" data-en="Security & Privacy">Segurança & Privacidade</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed" data-pt="Proteção máxima dos dados dos seus clientes com criptografia avançada e conformidade com LGPD. Sua confiança é nossa prioridade." data-en="Maximum protection of your customers' data with advanced encryption and LGPD compliance. Your trust is our priority.">
+                        Proteção máxima dos dados dos seus clientes com criptografia avançada e conformidade com LGPD. Sua confiança é nossa prioridade.
+                    </p>
+                </div>
+                
+                <!-- Differential 2: Personalization -->
+                <div class="text-center p-8">
+                    <div class="w-20 h-20 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-user-cog text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white" data-pt="Estratégias Personalizadas" data-en="Personalized Strategies">Estratégias Personalizadas</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed" data-pt="Não acreditamos em soluções prontas. Cada estratégia é desenvolvida especificamente para o seu negócio, setor e objetivos únicos." data-en="We don't believe in ready-made solutions. Each strategy is developed specifically for your business, sector and unique objectives.">
+                        Não acreditamos em soluções prontas. Cada estratégia é desenvolvida especificamente para o seu negócio, setor e objetivos únicos.
+                    </p>
+                </div>
+                
+                <!-- Differential 3: Innovation -->
+                <div class="text-center p-8">
+                    <div class="w-20 h-20 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-rocket text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white" data-pt="Tecnologia Inovadora" data-en="Innovative Technology">Tecnologia Inovadora</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed" data-pt="Utilizamos as ferramentas mais avançadas do mercado e inteligência artificial para otimizar campanhas e maximizar resultados." data-en="We use the most advanced tools in the market and artificial intelligence to optimize campaigns and maximize results.">
+                        Utilizamos as ferramentas mais avançadas do mercado e inteligência artificial para otimizar campanhas e maximizar resultados.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Process Timeline -->
+            <div class="mt-20">
+                <h3 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white" data-pt="Nosso Processo" data-en="Our Process">Nosso Processo</h3>
+                
+                <div class="max-w-4xl mx-auto">
+                    <div class="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0">
+                        <!-- Step 1 -->
+                        <div class="flex flex-col items-center text-center max-w-xs">
+                            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">1</div>
+                            <h4 class="font-bold text-lg mb-2 text-gray-900 dark:text-white" data-pt="Análise" data-en="Analysis">Análise</h4>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm" data-pt="Diagnóstico completo do seu negócio" data-en="Complete business diagnosis">Diagnóstico completo do seu negócio</p>
+                        </div>
+                        
+                        <div class="hidden md:block flex-1 h-0.5 bg-gray-300 dark:bg-gray-600 mx-4"></div>
+                        
+                        <!-- Step 2 -->
+                        <div class="flex flex-col items-center text-center max-w-xs">
+                            <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">2</div>
+                            <h4 class="font-bold text-lg mb-2 text-gray-900 dark:text-white" data-pt="Estratégia" data-en="Strategy">Estratégia</h4>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm" data-pt="Desenvolvimento do plano personalizado" data-en="Development of personalized plan">Desenvolvimento do plano personalizado</p>
+                        </div>
+                        
+                        <div class="hidden md:block flex-1 h-0.5 bg-gray-300 dark:bg-gray-600 mx-4"></div>
+                        
+                        <!-- Step 3 -->
+                        <div class="flex flex-col items-center text-center max-w-xs">
+                            <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">3</div>
+                            <h4 class="font-bold text-lg mb-2 text-gray-900 dark:text-white" data-pt="Execução" data-en="Execution">Execução</h4>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm" data-pt="Implementação e acompanhamento" data-en="Implementation and monitoring">Implementação e acompanhamento</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: DifferentialsSection -->
+
+    <!-- @COMPONENT: TestimonialsSection [Client testimonials carousel with auto-rotation] -->
+    <section id="testimonials" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white" data-pt="O Que Dizem Nossos Clientes" data-en="What Our Clients Say">
+                    O Que Dizem Nossos Clientes
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto" data-pt="Depoimentos reais de empresas que transformaram seus resultados conosco" data-en="Real testimonials from companies that transformed their results with us">
+                    Depoimentos reais de empresas que transformaram seus resultados conosco
+                </p>
+            </div>
+            
+            <div class="max-w-6xl mx-auto">
+                <!-- Testimonials Carousel Container -->
+                <div id="testimonials-container" class="relative overflow-hidden">
+                    <div id="testimonials-track" class="flex transition-transform duration-500 ease-in-out">
+                        <!-- Testimonial 1 -->
+                        <div class="w-full flex-shrink-0 px-4">
+                            <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 mx-auto max-w-4xl">
+                                <div class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
+                                    <!-- Customer photo showing professional business person -->
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&h=150" alt="Carlos Silva" class="w-24 h-24 rounded-full object-cover">
+                                    <div class="flex-1 text-center md:text-left">
+                                        <div class="flex justify-center md:justify-start mb-4">
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                        </div>
+                                        <blockquote class="text-xl text-gray-700 dark:text-gray-300 mb-4" data-pt="&quot;A Ivox Scale transformou completamente nossa estratégia digital. Em 6 meses, aumentamos nosso faturamento em 200%. A equipe é extremamente profissional e os resultados falam por si só.&quot;" data-en="&quot;Ivox Scale completely transformed our digital strategy. In 6 months, we increased our revenue by 200%. The team is extremely professional and the results speak for themselves.&quot;">
+                                            "A Ivox Scale transformou completamente nossa estratégia digital. Em 6 meses, aumentamos nosso faturamento em 200%. A equipe é extremamente profissional e os resultados falam por si só."
+                                        </blockquote>
+                                        <div>
+                                            <div class="font-bold text-gray-900 dark:text-white">Carlos Silva</div>
+                                            <div class="text-gray-600 dark:text-gray-400" data-pt="CEO, TechStart Brasil" data-en="CEO, TechStart Brazil">CEO, TechStart Brasil</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 2 -->
+                        <div class="w-full flex-shrink-0 px-4">
+                            <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 mx-auto max-w-4xl">
+                                <div class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
+                                    <!-- Customer photo showing professional business person -->
+                                    <img src="https://pixabay.com/get/geb0ef0c8a3fb12e8624841fa976baef6fa4f96594dc176505c7e09d8ad0f7ccf0baa4648e6b8dad3867389b59cf63f680103bdcd9b36aa0abaf8880efab138b7_1280.jpg" alt="Ana Costa" class="w-24 h-24 rounded-full object-cover">
+                                    <div class="flex-1 text-center md:text-left">
+                                        <div class="flex justify-center md:justify-start mb-4">
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                        </div>
+                                        <blockquote class="text-xl text-gray-700 dark:text-gray-300 mb-4" data-pt="&quot;Parceria incrível! O atendimento é personalizado e a estratégia desenvolvida foi perfeita para nosso nicho. Nossos leads qualificados triplicaram em apenas 4 meses.&quot;" data-en="&quot;Amazing partnership! The service is personalized and the strategy developed was perfect for our niche. Our qualified leads tripled in just 4 months.&quot;">
+                                            "Parceria incrível! O atendimento é personalizado e a estratégia desenvolvida foi perfeita para nosso nicho. Nossos leads qualificados triplicaram em apenas 4 meses."
+                                        </blockquote>
+                                        <div>
+                                            <div class="font-bold text-gray-900 dark:text-white">Ana Costa</div>
+                                            <div class="text-gray-600 dark:text-gray-400" data-pt="Diretora de Marketing, Inovar Consultoria" data-en="Marketing Director, Inovar Consulting">Diretora de Marketing, Inovar Consultoria</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 3 -->
+                        <div class="w-full flex-shrink-0 px-4">
+                            <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 mx-auto max-w-4xl">
+                                <div class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
+                                    <!-- Customer photo showing professional business person -->
+                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&h=150" alt="Roberto Mendes" class="w-24 h-24 rounded-full object-cover">
+                                    <div class="flex-1 text-center md:text-left">
+                                        <div class="flex justify-center md:justify-start mb-4">
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                        </div>
+                                        <blockquote class="text-xl text-gray-700 dark:text-gray-300 mb-4" data-pt="&quot;Profissionalismo exemplar! A Ivox Scale não apenas entregou resultados excepcionais, como também nos educou sobre marketing digital. Recomendo sem reservas.&quot;" data-en="&quot;Exemplary professionalism! Ivox Scale not only delivered exceptional results but also educated us about digital marketing. I recommend without reservation.&quot;">
+                                            "Profissionalismo exemplar! A Ivox Scale não apenas entregou resultados excepcionais, como também nos educou sobre marketing digital. Recomendo sem reservas."
+                                        </blockquote>
+                                        <div>
+                                            <div class="font-bold text-gray-900 dark:text-white">Roberto Mendes</div>
+                                            <div class="text-gray-600 dark:text-gray-400" data-pt="Fundador, E-commerce Plus" data-en="Founder, E-commerce Plus">Fundador, E-commerce Plus</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carousel Navigation -->
+                <div class="flex justify-center mt-8 space-x-2">
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-primary" data-index="0"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-gray-300 dark:bg-gray-600" data-index="1"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-gray-300 dark:bg-gray-600" data-index="2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: TestimonialsSection -->
+
+    <!-- @COMPONENT: ContactSection [Contact form with WhatsApp integration] -->
+    <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white" data-pt="Entre em Contato" data-en="Get in Touch">
+                    Entre em Contato
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto" data-pt="Pronto para transformar seu negócio? Fale conosco e descubra como podemos ajudar" data-en="Ready to transform your business? Contact us and discover how we can help">
+                    Pronto para transformar seu negócio? Fale conosco e descubra como podemos ajudar
+                </p>
+            </div>
+            
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white" data-pt="Vamos Conversar" data-en="Let's Talk">Vamos Conversar</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-lg" data-pt="Nossa equipe está pronta para entender suas necessidades e desenvolver a estratégia perfeita para seu negócio." data-en="Our team is ready to understand your needs and develop the perfect strategy for your business.">
+                        Nossa equipe está pronta para entender suas necessidades e desenvolver a estratégia perfeita para seu negócio.
+                    </p>
+                    
+                    <!-- Contact Methods -->
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-envelope text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-900 dark:text-white">Email</div>
+                                <a href="mailto:contato@ivoxscale.com" class="text-primary hover:underline">contato@ivoxscale.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center">
+                                <i class="fab fa-whatsapp text-green-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-900 dark:text-white">WhatsApp</div>
+                                <a href="#" id="whatsapp-link" class="text-green-500 hover:underline" data-pt="Clique para conversar" data-en="Click to chat">Clique para conversar</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-clock text-blue-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-900 dark:text-white" data-pt="Horário de Atendimento" data-en="Business Hours">Horário de Atendimento</div>
+                                <div class="text-gray-600 dark:text-gray-300" data-pt="Segunda à Sexta: 9h às 18h" data-en="Monday to Friday: 9am to 6pm">Segunda à Sexta: 9h às 18h</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Media Links -->
+                    <div class="pt-8 border-t border-gray-200 dark:border-gray-600">
+                        <div class="font-semibold text-gray-900 dark:text-white mb-4" data-pt="Siga-nos nas Redes Sociais" data-en="Follow Us on Social Media">Siga-nos nas Redes Sociais</div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-pink-600 text-white rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-8">
+                    <form id="contact-form" novalidate>
+                        <div class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-semibold text-gray-900 dark:text-white mb-2" data-pt="Nome Completo" data-en="Full Name">Nome Completo</label>
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white" data-pt-placeholder="Seu nome completo" data-en-placeholder="Your full name" placeholder="Seu nome completo">
+                                <div class="error-message hidden text-red-500 text-sm mt-1"></div>
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-semibold text-gray-900 dark:text-white mb-2" data-pt="E-mail" data-en="Email">E-mail</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white" data-pt-placeholder="seu@email.com" data-en-placeholder="your@email.com" placeholder="seu@email.com">
+                                <div class="error-message hidden text-red-500 text-sm mt-1"></div>
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-sm font-semibold text-gray-900 dark:text-white mb-2" data-pt="Telefone (Opcional)" data-en="Phone (Optional)">Telefone (Opcional)</label>
+                                <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white" data-pt-placeholder="(11) 99999-9999" data-en-placeholder="(11) 99999-9999" placeholder="(11) 99999-9999">
+                            </div>
+                            
+                            <div>
+                                <label for="service" class="block text-sm font-semibold text-gray-900 dark:text-white mb-2" data-pt="Serviço de Interesse" data-en="Service of Interest">Serviço de Interesse</label>
+                                <select id="service" name="service" required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white">
+                                    <option value="" data-pt="Selecione um serviço" data-en="Select a service">Selecione um serviço</option>
+                                    <option value="traffic" data-pt="Gestão de Tráfego Pago" data-en="Paid Traffic Management">Gestão de Tráfego Pago</option>
+                                    <option value="websites" data-pt="Sites e Landing Pages" data-en="Websites & Landing Pages">Sites e Landing Pages</option>
+                                    <option value="social" data-pt="Social Media & Conteúdo" data-en="Social Media & Content">Social Media & Conteúdo</option>
+                                    <option value="consulting" data-pt="Consultoria Estratégica" data-en="Strategic Consulting">Consultoria Estratégica</option>
+                                    <option value="all" data-pt="Pacote Completo" data-en="Complete Package">Pacote Completo</option>
+                                </select>
+                                <div class="error-message hidden text-red-500 text-sm mt-1"></div>
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-semibold text-gray-900 dark:text-white mb-2" data-pt="Mensagem" data-en="Message">Mensagem</label>
+                                <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white resize-none" data-pt-placeholder="Conte-nos sobre seu projeto e objetivos..." data-en-placeholder="Tell us about your project and objectives..." placeholder="Conte-nos sobre seu projeto e objetivos..."></textarea>
+                                <div class="error-message hidden text-red-500 text-sm mt-1"></div>
+                            </div>
+                            
+                            <!-- reCAPTCHA Placeholder -->
+                            <div class="flex items-center space-x-2 p-4 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-800">
+                                <input type="checkbox" id="recaptcha" class="w-5 h-5 text-primary">
+                                <label for="recaptcha" class="text-sm text-gray-700 dark:text-gray-300" data-pt="Não sou um robô" data-en="I'm not a robot">Não sou um robô</label>
+                                <i class="fas fa-shield-alt text-gray-400"></i>
+                            </div>
+                            
+                            <button type="submit" class="w-full px-6 py-4 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed" data-pt="Enviar Mensagem" data-en="Send Message">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Enviar Mensagem
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ContactSection -->
+
+    <!-- @COMPONENT: Footer [Company links, social media, legal information] -->
+    <footer class="bg-gray-900 dark:bg-black text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
+                            <i class="fas fa-rocket text-white text-xl"></i>
+                        </div>
+                        <span class="text-2xl font-bold">Ivox Scale</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 leading-relaxed" data-pt="Transformamos negócios através do marketing digital estratégico. Nossa missão é elevar sua presença online e gerar resultados mensuráveis para seu crescimento." data-en="We transform businesses through strategic digital marketing. Our mission is to elevate your online presence and generate measurable results for your growth.">
+                        Transformamos negócios através do marketing digital estratégico. Nossa missão é elevar sua presença online e gerar resultados mensuráveis para seu crescimento.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-primary text-white rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-primary text-white rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-primary text-white rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-primary text-white rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6" data-pt="Links Rápidos" data-en="Quick Links">Links Rápidos</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors" data-pt="Início" data-en="Home">Início</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors" data-pt="Sobre" data-en="About">Sobre</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors" data-pt="Serviços" data-en="Services">Serviços</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition-colors" data-pt="Depoimentos" data-en="Testimonials">Depoimentos</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors" data-pt="Contato" data-en="Contact">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6" data-pt="Contato" data-en="Contact">Contato</h3>
+                    <ul class="space-y-3">
+                        <li class="text-gray-400">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <a href="mailto:contato@ivoxscale.com" class="hover:text-white transition-colors">contato@ivoxscale.com</a>
+                        </li>
+                        <li class="text-gray-400">
+                            <i class="fab fa-whatsapp mr-2"></i>
+                            <span data-pt="WhatsApp disponível" data-en="WhatsApp available">WhatsApp disponível</span>
+                        </li>
+                        <li class="text-gray-400">
+                            <i class="fas fa-clock mr-2"></i>
+                            <span data-pt="Seg-Sex: 9h às 18h" data-en="Mon-Fri: 9am to 6pm">Seg-Sex: 9h às 18h</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="border-t border-gray-800 mt-12 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-gray-400 text-sm" data-pt="© 2024 Ivox Scale. Todos os direitos reservados." data-en="© 2024 Ivox Scale. All rights reserved.">
+                        © 2024 Ivox Scale. Todos os direitos reservados.
+                    </p>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors" data-pt="Política de Privacidade" data-en="Privacy Policy">Política de Privacidade</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors" data-pt="Termos de Uso" data-en="Terms of Use">Termos de Uso</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors" data-pt="LGPD" data-en="GDPR">LGPD</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <!-- @COMPONENT: BackToTopButton [Floating button with smooth scroll] -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-14 h-14 bg-primary hover:bg-primaryHover text-white rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 z-50 opacity-0 pointer-events-none">
+        <i class="fas fa-chevron-up text-xl"></i>
+    </button>
+    <!-- @END_COMPONENT: BackToTopButton -->
+
+    <script>
+        // TODO: Implement business logic, API calls, and state management
+        
+        (function() {
+            // Theme Management
+            const themeToggle = document.getElementById('theme-toggle');
+            const html = document.documentElement;
+            
+            // Load saved theme or default to light
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            html.classList.toggle('dark', savedTheme === 'dark');
+            
+            themeToggle.addEventListener('click', () => {
+                const isDark = html.classList.toggle('dark');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            });
+            
+            // Language Management
+            const languageToggle = document.getElementById('language-toggle');
+            const currentLangSpan = document.getElementById('current-lang');
+            let currentLang = localStorage.getItem('language') || 'pt';
+            
+            function updateLanguage(lang) {
+                currentLang = lang;
+                currentLangSpan.textContent = lang.toUpperCase();
+                localStorage.setItem('language', lang);
+                
+                // Update all elements with language attributes
+                document.querySelectorAll('[data-pt][data-en]').forEach(element => {
+                    const text = element.getAttribute(`data-${lang}`);
+                    if (text) {
+                        element.textContent = text;
+                    }
+                });
+                
+                // Update placeholder texts
+                document.querySelectorAll('[data-pt-placeholder][data-en-placeholder]').forEach(element => {
+                    const placeholder = element.getAttribute(`data-${lang}-placeholder`);
+                    if (placeholder) {
+                        element.placeholder = placeholder;
+                    }
+                });
+                
+                // Update document language
+                document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+            }
+            
+            languageToggle.addEventListener('click', () => {
+                const newLang = currentLang === 'pt' ? 'en' : 'pt';
+                updateLanguage(newLang);
+            });
+            
+            // Initialize language
+            updateLanguage(currentLang);
+            
+            // Mobile Menu
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            });
+            
+            // Close mobile menu when clicking on links
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+                    mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+                });
+            });
+            
+            // Smooth Scrolling for Navigation Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        const targetPosition = target.offsetTop - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Testimonials Carousel
+            const testimonialsTrack = document.getElementById('testimonials-track');
+            const testimonialDots = document.querySelectorAll('.testimonial-dot');
+            let currentTestimonial = 0;
+            const totalTestimonials = 3;
+            let autoSlideInterval;
+            
+            function showTestimonial(index) {
+                currentTestimonial = index;
+                testimonialsTrack.style.transform = `translateX(-${index * 100}%)`;
+                
+                testimonialDots.forEach((dot, i) => {
+                    dot.classList.toggle('bg-primary', i === index);
+                    dot.classList.toggle('bg-gray-300', i !== index);
+                    dot.classList.toggle('dark:bg-gray-600', i !== index);
+                });
+            }
+            
+            function nextTestimonial() {
+                const next = (currentTestimonial + 1) % totalTestimonials;
+                showTestimonial(next);
+            }
+            
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(nextTestimonial, 5000);
+            }
+            
+            function stopAutoSlide() {
+                clearInterval(autoSlideInterval);
+            }
+            
+            // Add click listeners to dots
+            testimonialDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    stopAutoSlide();
+                    showTestimonial(index);
+                    startAutoSlide();
+                });
+            });
+            
+            // Pause auto-slide on hover
+            const testimonialsContainer = document.getElementById('testimonials-container');
+            testimonialsContainer.addEventListener('mouseenter', stopAutoSlide);
+            testimonialsContainer.addEventListener('mouseleave', startAutoSlide);
+            
+            // Start auto-slide
+            startAutoSlide();
+            
+            // Back to Top Button
+            const backToTopBtn = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                    backToTopBtn.classList.add('opacity-100', 'pointer-events-auto');
+                } else {
+                    backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                    backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Contact Form Handling
+            const contactForm = document.getElementById('contact-form');
+            const whatsappLink = document.getElementById('whatsapp-link');
+            
+            // WhatsApp Integration
+            function updateWhatsAppLink() {
+                const message = currentLang === 'pt' 
+                    ? 'Olá! Gostaria de saber mais sobre os serviços da Ivox Scale.'
+                    : 'Hello! I would like to know more about Ivox Scale services.';
+                    
+                const encodedMessage = encodeURIComponent(message);
+                whatsappLink.href = `https://wa.me/5511999999999?text=${encodedMessage}`;
+            }
+            
+            updateWhatsAppLink();
+            
+            // Update WhatsApp link when language changes
+            languageToggle.addEventListener('click', () => {
+                setTimeout(updateWhatsAppLink, 100);
+            });
+            
+            // Form Validation
+            function validateField(field) {
+                const value = field.value.trim();
+                const errorDiv = field.parentNode.querySelector('.error-message');
+                let isValid = true;
+                let errorMessage = '';
+                
+                // Remove previous error styling
+                field.classList.remove('border-red-500');
+                errorDiv.classList.add('hidden');
+                
+                if (field.hasAttribute('required') && !value) {
+                    isValid = false;
+                    errorMessage = currentLang === 'pt' ? 'Este campo é obrigatório' : 'This field is required';
+                }
+                
+                if (field.type === 'email' && value) {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(value)) {
+                        isValid = false;
+                        errorMessage = currentLang === 'pt' ? 'Por favor, insira um e-mail válido' : 'Please enter a valid email';
+                    }
+                }
+                
+                if (!isValid) {
+                    field.classList.add('border-red-500');
+                    errorDiv.textContent = errorMessage;
+                    errorDiv.classList.remove('hidden');
+                }
+                
+                return isValid;
+            }
+            
+            // Real-time validation
+            contactForm.querySelectorAll('input, select, textarea').forEach(field => {
+                field.addEventListener('blur', () => validateField(field));
+                field.addEventListener('input', () => {
+                    if (field.classList.contains('border-red-500')) {
+                        validateField(field);
+                    }
+                });
+            });
+            
+            // Form submission
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Validate all fields
+                const fields = contactForm.querySelectorAll('input[required], select[required], textarea[required]');
+                let isFormValid = true;
+                
+                fields.forEach(field => {
+                    if (!validateField(field)) {
+                        isFormValid = false;
+                    }
+                });
+                
+                // Check reCAPTCHA
+                const recaptcha = document.getElementById('recaptcha');
+                if (!recaptcha.checked) {
+                    isFormValid = false;
+                    // Show reCAPTCHA error (in a real implementation, this would be handled by reCAPTCHA)
+                }
+                
+                if (isFormValid) {
+                    // TODO: Implement actual form submission to backend
+                    const submitBtn = contactForm.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.innerHTML;
+                    
+                    // Show loading state
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = `<i class="fas fa-spinner fa-spin mr-2"></i>${currentLang === 'pt' ? 'Enviando...' : 'Sending...'}`;
+                    
+                    // Simulate form submission
+                    setTimeout(() => {
+                        alert(currentLang === 'pt' ? 
+                            'Mensagem enviada com sucesso! Entraremos em contato em breve.' : 
+                            'Message sent successfully! We will get in touch soon.'
+                        );
+                        
+                        contactForm.reset();
+                        recaptcha.checked = false;
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalText;
+                    }, 2000);
+                }
+            });
+            
+            // Parallax Effect (simplified for performance)
+            let ticking = false;
+            
+            function updateParallax() {
+                const scrolled = window.pageYOffset;
+                const parallaxElements = document.querySelectorAll('.parallax');
+                
+                parallaxElements.forEach(element => {
+                    const speed = 0.5;
+                    element.style.transform = `translateY(${scrolled * speed}px)`;
+                });
+                
+                ticking = false;
+            }
+            
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(updateParallax);
+                    ticking = true;
+                }
+            });
+            
+            // Intersection Observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe service cards and other elements
+            document.querySelectorAll('.service-card, .testimonial-card').forEach(el => {
+                observer.observe(el);
+            });
+            
+        })();
+    </script>
+</body>
+</html>
