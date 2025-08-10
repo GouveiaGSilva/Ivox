@@ -1,0 +1,14 @@
+[build]
+  publish = "dist"
+  command = "npx vite build --config build.netlify.js"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[context.production.environment]
+  NODE_ENV = "production"
