@@ -1,0 +1,144 @@
+Prompt para Replit
+Instruções: Você é um desenvolvedor web especialista em UI/UX, segurança e performance. Sua missão é criar um site profissional, moderno, seguro e inovador para uma empresa de assessoria de marketing digital chamada Ivox Scale (contato@ivoxscale.com).
+O resultado deve ser totalmente funcional, com HTML, CSS e JavaScript bem organizados, seguindo boas práticas de código e design responsivo. Além disso, faça um tema escuro e claro, e também disponibilize a opção de deixar o site em portugues e ingles com um botão, assim como a troca de temas
+
+1. Estrutura e Tecnologias
+Linguagens: HTML5, CSS3, JavaScript (ES6+)
+
+Layout responsivo usando Flexbox e/ou CSS Grid
+
+Fonte moderna (Google Fonts, ex: "Poppins" ou "Montserrat")
+
+Paleta de cores moderna (ex: combinações entre preto, branco, cinza, azul ou roxo)
+
+Ícones vetoriais de alta qualidade (ex: Font Awesome ou Lucide Icons)
+
+Estrutura de pastas:
+
+bash
+Copiar
+Editar
+/index.html
+/css/style.css
+/js/script.js
+/img/ (imagens otimizadas)
+2. Páginas e Sessões
+Página inicial (index.html) contendo:
+
+Header fixo com:
+
+Logo da empresa
+
+Menu de navegação suave para seções (scroll suave em JS)
+
+Botão de "Solicitar Orçamento"
+
+Hero Section:
+
+Imagem ou vídeo de fundo de alta qualidade
+
+Título forte (headline) e subtítulo impactante
+
+Call-to-Action (ex: "Transforme seu negócio com marketing digital")
+
+Sobre a Empresa:
+
+Texto institucional curto e objetivo
+
+Imagem ilustrativa ou mockup de equipe
+
+Serviços:
+
+Cards animados com ícones e breve descrição:
+
+Gestão de Tráfego Pago
+
+Criação de Sites e Landing Pages
+
+Social Media e Produção de Conteúdo
+
+Consultoria Estratégica
+
+Diferenciais:
+
+Seção visual destacando:
+
+Segurança e privacidade de dados
+
+Estratégias personalizadas
+
+Uso de tecnologias inovadoras
+
+Depoimentos de Clientes:
+
+Carrossel automático em JS
+
+Foto do cliente, nome e feedback
+
+Contato:
+
+Formulário seguro (nome, e-mail, mensagem)
+
+Integração com reCAPTCHA
+
+Link para WhatsApp com mensagem automática
+
+Footer:
+
+Links rápidos
+
+Redes sociais com ícones
+
+Direitos autorais e aviso de privacidade
+
+3. Design Moderno
+Layout minimalista, com bastante espaço em branco
+
+Animações suaves (hover, fade-in, slide-up)
+
+Botões com bordas arredondadas e microinterações
+
+Transições CSS para deixar o site fluído
+
+4. Segurança e Performance
+Formulário protegido contra injeção de código
+
+Links externos abrindo em target="_blank" com rel="noopener noreferrer"
+
+Imagens otimizadas em formato WebP
+
+Arquivos CSS e JS minificados
+
+Cabeçalhos HTML configurados para SEO básico (title, meta description, keywords, og:image)
+
+5. Funcionalidades Extras
+Scroll suave entre seções
+
+Menu mobile responsivo com ícone de hambúrguer
+
+Botão “voltar ao topo” flutuante
+
+Efeito parallax no banner principal
+
+Opção de modo claro/escuro (dark mode toggle)
+
+6. Estilo de Código
+HTML semântico
+
+Comentários explicando cada seção
+
+Classes e IDs com nomes claros (kebab-case)
+
+CSS organizado por seções
+
+JavaScript modularizado
+
+Exemplo de tom e texto
+Headline: "Sua presença digital elevada a outro nível"
+
+Subheadline: "Marketing com propósito, estratégia e tecnologia de ponta"
+
+Botão CTA: "Comece Agora"
+
+Objetivo final: Criar um site com aparência de empresa premium, que transmita profissionalismo, inovação e segurança, pronto para ser colocado em produção e capaz de gerar leads para a empresa de marketing digital.
+
